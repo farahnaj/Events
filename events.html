@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Events View</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="events.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="events.js"></script>
+
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#events-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Events</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="events-collapse">
+             <div class="navbar-left search-controls" role="search">
+                 <input class="search-input" placeholder="Search..." type="text">
+                 <span class="glyphicon glyphicon-search" aria-hidden="true" style="float: right; align-self: center;"></span>
+             </div>          
+             <ul class="nav navbar-nav navbar-right">
+                 <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                 <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Farahnaj <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                     </ul>
+                 </li>
+             </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- <nav class="navbar v-navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#v-events-collapse">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+          </button>
+        </div>
+
+  <div class="collapse navbar-collapse v-navbar-collapse" id="v-events-collapse">
+    <ul class="nav navbar-nav v-navbar-nav">
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"></span></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
+      <li> <a href="#"><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>   
+    </ul>
+  </div>
+</nav>
+
+<div id="content"></div>
+ --> 
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"><span class="sr-only">(current)</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
+            <li><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
+          </ul>
+          <ul class="nav nav-sidebar">            
+            <li><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
+            <li><a href=""><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
+            <li><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-2 main-content">
+          <h1 class="page-header">Upcoming Events</h1>
+          <div class="header-actions">
+               <span class="glyphicon glyphicon-th v-img action-active header-action" aria-hidden="true" id="show-grid"></span> 
+               <span class="glyphicon glyphicon-list v-img header-action" aria-hidden="true" id="show-list"></span>
+               <span class="glyphicon glyphicon-calendar v-img header-action" aria-hidden="true" id="show-calendar"></span>
+          </div>
+          <div id="content"></div>         
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
