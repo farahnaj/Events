@@ -1,5 +1,33 @@
+<!-- Templates to show grid and list view using handlbar.js -->
+<script type="template" id="events-list-template">
+     <div class="table-responsive">
+       <table class="table table-striped">
+         <thead>
+            <tr>
+              <th>#</th>
+              <th>Event</th>
+              <th>Title</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Venue</th>
+            </tr>
+         </thead>
+         <tbody>
+           <tr>
+              <td>{{id}}</td>
+              <td><img class="small-img" src="{{image}}" title="{{description}}"></img></td>
+              <td>{{title}}</td>
+              <td>{{date}}</td>
+              <td>{{time}}</td>
+              <td>{{venue}}</td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+</script>
 
-<script type="template" id="events-template">
-     <h1><%- title %></h1>
-     <h2><%-  time %></h2>
+
+<script type="template" id="events-grid-template">
+     <div class="row">
+     </div>
 </script>

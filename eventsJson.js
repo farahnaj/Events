@@ -1,4 +1,7 @@
-[
+/**
+ * Global object of events in array.
+ */
+var eventsJSON = [
   {
     "id": 1,
     "title": "Birthday Party",
@@ -6,10 +9,7 @@
     "date": "12 Dec 2015",
     "time": "10:00 AM",
     "description": "Birthday party of all who born in Dec for All Emp",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/bd.jpg"
   },
  {
     "id": 2,
@@ -18,10 +18,7 @@
     "date": "2 Jan 2015",
     "time": "11:00 AM",
     "description": "Java coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/java.jpg"
   },
   {
     "id": 3,
@@ -30,10 +27,7 @@
     "date": "3 Jan 2015",
     "time": "11:00 AM",
     "description": "Java script coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/js.jpg"
   },
   {
     "id": 4,
@@ -42,10 +36,7 @@
     "date": "4 Jan 2015",
     "time": "11:00 AM",
     "description": "VB coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/vb.jpg"
   },
   {
     "id": 5,
@@ -54,10 +45,7 @@
     "date": "5 Jan 2015",
     "time": "11:00 AM",
     "description": "CSS coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/css.jpg"
   },
   {
     "id": 6,
@@ -66,10 +54,7 @@
     "date": "6 Jan 2015",
     "time": "11:00 AM",
     "description": "HTML coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/html.jpg"
   },
   {
     "id": 7,
@@ -78,10 +63,7 @@
     "date": "7 Jan 2015",
     "time": "11:00 AM",
     "description": "JQuery coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/jq.jpg"
   },
   {
     "id": 8,
@@ -90,9 +72,6 @@
     "date": "8 Jan 2015",
     "time": "11:00 AM",
     "description": "Shell Script coding compitition",    
-    "image": {
-      "small": "/images/sony-xperia-z3.jpg",
-      "large": "/images/sony-xperia-z3-large.jpg"
-    }
+    "image": "images/ss.jpg"
   },
-]
+];

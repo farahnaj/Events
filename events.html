@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Events View</title>
@@ -8,7 +7,9 @@
   <link rel="stylesheet" type="text/css" href="events.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="events.js"></script>
+  <script src="eventsUi.js"></script>
+  <script src="eventsCore.js"></script>
+  <script src="eventsJson.js"></script>
 
 </head>
 <body>
@@ -47,33 +48,6 @@
       </div>
     </nav>
 
-<!-- <nav class="navbar v-navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#v-events-collapse">
-             <span class="sr-only">Toggle navigation</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-          </button>
-        </div>
-
-  <div class="collapse navbar-collapse v-navbar-collapse" id="v-events-collapse">
-    <ul class="nav navbar-nav v-navbar-nav">
-      <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"></span></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
-      <li> <a href="#"><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>   
-    </ul>
-  </div>
-</nav>
-
-<div id="content"></div>
- --> 
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
@@ -98,7 +72,7 @@
                <span class="glyphicon glyphicon-list v-img header-action" aria-hidden="true" id="show-list"></span>
                <span class="glyphicon glyphicon-calendar v-img header-action" aria-hidden="true" id="show-calendar"></span>
           </div>
-          <div id="content"></div>         
+          <div id="content"><img src="images/ajax-spinner.gif"></img></div>         
         </div>
       </div>
     </div>
