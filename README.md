@@ -20,20 +20,20 @@ First Look:
   On click of Event image in Grid view as well as click of row in List view will display detail of clicked Event.
 
 5. UI :
-  i. Grid View : http://snag.gy/2recX.jpg
-  ii. List View : http://snag.gy/v12Z9.jpg
-  iii. Calendar View: http://snag.gy/Kn5qy.jpg
-  iv. Indivisual Event: http://snag.gy/LFARS.jpg
+  i. Grid View : http://snag.gy/2recX.jpg ,
+  ii. List View : http://snag.gy/v12Z9.jpg ,
+  iii. Calendar View: http://snag.gy/Kn5qy.jpg ,
+  iv. Indivisual Event: http://snag.gy/LFARS.jpg 
 
 6. Code Content:
-  events.html - main html page
-  eventsCore.js - core functions
-  eventsUi.js - ui events
-  eventsJson.js - global data
-  events.css - css classes
-  images - folder of images
+  events.html - main html page ,
+  eventsCore.js - core functions ,
+  eventsUi.js - ui events ,
+  eventsJson.js - global data ,
+  events.css - css classes ,
+  images - folder of images ,
 
-  eventsTpl.html - for future enhancement.
+  eventsTpl.html - for future enhancement. 
 
 7. Future Enhancment :
   Use of Handlbar.js and Backbone.js
