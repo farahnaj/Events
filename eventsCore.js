@@ -1,3 +1,4 @@
+/* This code is with basic javascript,jquery and bootstrap*/
 /** 
  * As per selection , update display.
  */
