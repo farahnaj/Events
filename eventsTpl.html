@@ -1,5 +1,5 @@
 <!-- Templates to show grid and list view using handlbar.js -->
-<script type="template" id="events-list-template">
+<script type="x-handlebars-template" id="events-list-template">
      <div class="table-responsive">
        <table class="table table-striped">
          <thead>
@@ -13,7 +13,8 @@
             </tr>
          </thead>
          <tbody>
-           <tr>
+          {{#each this}}​
+           <tr class="event c-p" title="{{description}}" id="{{id}}">
               <td>{{id}}</td>
               <td><img class="small-img" src="{{image}}" title="{{description}}"></img></td>
               <td>{{title}}</td>
@@ -21,13 +22,34 @@
               <td>{{time}}</td>
               <td>{{venue}}</td>
            </tr>
+          {{/each}}
          </tbody>
        </table>
     </div>
 </script>
 
 
-<script type="template" id="events-grid-template">
+<script type="x-handlebars-template" id="events-grid-template">
      <div class="row">
+      {{#each this}}​
+        <div class="col-xs-6 col-lg-4">
+            <a class="popoverData" href="#" data-content="{{description}} at {{venue}} on {{date}},{{time}}." rel="popover" data-placement="bottom" data-original-title="{{title}}" data-trigger="hover">
+                   <img class="large-img event" id="{{id}}" src="{{image}}"></img>
+            </a>
+        </div>
+      {{/each}}
      </div>
+</script>
+
+<script type="x-handlebars-template" id="event-template">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h3 class="panel-title">{{title}}</h3></div>
+      <div class="panel-body">
+           <img class="large-img" src="{{image}}"></img><br>
+           <b>Description: </b>{{description}}<br>
+           <b>Date: </b>{{date}}<br>
+           <b>Time: </b>{{time}}<br>
+           <b>Venue: </b>{{venue}}
+      </div>
+    </div>
 </script>

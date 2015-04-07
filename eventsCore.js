@@ -1,3 +1,4 @@
+/* This code is with basic javascript,jquery,bootstrap, handlebar.js and backbone.js*/
 /** 
  * As per selection , update display.
  */
@@ -21,20 +22,8 @@ function displayList()
 {
   console.log("In displayList");
 
-  // Set table
-  var tmplt = '<div class="table-responsive"><table class="table table-striped"><thead><tr><th>#</th><th>Event</th><th>Title</th><th>Date</th><th>Time</th><th>Venue</th></tr></thead><tbody>';
-
-  // Fill table
-  for (var i in eventsJSON) {
-    var e = '<tr class="event c-p" title="'+eventsJSON[i].description+'" id="'+eventsJSON[i].id+'"><td>'+eventsJSON[i].id+'</td><td><img class="small-img" src="'+eventsJSON[i].image+'"></img></td><td>'+eventsJSON[i].title+'</td><td>'+eventsJSON[i].date+'</td><td>'+eventsJSON[i].time+'</td><td>'+eventsJSON[i].venue+'</td></tr>';
-    tmplt += e;
-   }
-
-  // Set table end
-  tmplt +='</tbody></table></div>';
-
-  // Add to content
-  $("#content").html(tmplt);
+  // Update display
+  updateDisplay($("#events-list-template").html(), eventsJSON);
 
   // Activate click event of Event
   assignClickEvent();
@@ -47,20 +36,8 @@ function displayGrid()
 {
   console.log("In displayGrid");
 
-  // Set grid
-  var tmplt = '<div class="row">';
-
-  // Fill grid
-  for (var i in eventsJSON) {
-    var e = '<div class="col-xs-6 col-lg-4"><a class="popoverData" href="#" data-content="'+eventsJSON[i].description+' at '+eventsJSON[i].venue+' on '+ eventsJSON[i].date+','+eventsJSON[i].time+'." rel="popover" data-placement="bottom" data-original-title="'+eventsJSON[i].title+'" data-trigger="hover"><img class="large-img event" id="'+eventsJSON[i].id+'" src="'+eventsJSON[i].image+'"></img></a></div>';
-    tmplt += e;
-   }
-
-  // Set grid end
-  tmplt +='</div>';
-
-  // Add to content
-  $("#content").html(tmplt);
+  // Update display
+  updateDisplay($("#events-grid-template").html(), eventsJSON);
 
   // Activate popover
   $('.popoverData').popover();
@@ -98,9 +75,18 @@ function showEvent(eventId)
 
   console.log(evnt);
 
-  // Set event div
-  var tmplt = '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">'+evnt.title+'</h3></div><div class="panel-body"><img class="large-img" src="'+evnt.image+'"></img><br><b>Description: </b>'+evnt.description+'<br><b>Date: </b>'+evnt.date+'<br><b>Time: </b>'+evnt.time+'<br><b>Venue: </b>'+evnt.venue+'</div></div>';
+  // Update display
+  updateDisplay($("#event-template").html(), evnt);  
+}
+
+/**
+ * Gets template, comile it and fills data. Updates display.
+ */
+function updateDisplay(tmplt,data)
+{
+  //Compile the template​
+  var theTemplate = Handlebars.compile (tmplt);     
 
   // Add to content
-  $("#content").html(tmplt);
+  $("#content").html(theTemplate(data)); 
 }
