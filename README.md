@@ -41,3 +41,7 @@ First Look:
 Second Look:
 Changes: Handlbar.js is used.
 Future Enhancment : Use of Backbone.js
+
+Third Look:
+Changes: Backbone.js is used.
+Future Enhancment : Applying click and hover events using Backbone.js
