@@ -23,7 +23,7 @@ function displayList()
   console.log("In displayList");
 
   // Update display
-  updateDisplay($("#events-list-template").html(), eventsJSON);
+  createView($("#events-list-template").html(), App.eventsForCollection.toJSON());
 
   // Activate click event of Event
   assignClickEvent();
@@ -37,7 +37,7 @@ function displayGrid()
   console.log("In displayGrid");
 
   // Update display
-  updateDisplay($("#events-grid-template").html(), eventsJSON);
+  createView($("#events-grid-template").html(), App.eventsForCollection.toJSON());
 
   // Activate popover
   $('.popoverData').popover();
@@ -71,12 +71,13 @@ function showEvent(eventId)
   // Add loading img to show its loading
   $("#content").html('<img src="images/ajax-spinner.gif"></img>');
 
-  var evnt = eventsJSON[eventId-1];
+  // Get event from collection by id
+  var evnt = App.eventsForCollection.get(eventId).toJSON();
 
   console.log(evnt);
 
   // Update display
-  updateDisplay($("#event-template").html(), evnt);  
+  createView($("#event-template").html(), evnt);  
 }
 
 /**
@@ -87,6 +88,6 @@ function updateDisplay(tmplt,data)
   //Compile the template​
   var theTemplate = Handlebars.compile (tmplt);     
 
-  // Add to content
-  $("#content").html(theTemplate(data)); 
+  // Return compiled tmplt with data
+  return theTemplate(data); 
 }

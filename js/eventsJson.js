@@ -74,4 +74,40 @@ var eventsJSON = [
     "description": "Shell Script coding compitition",    
     "image": "images/ss.jpg"
   },
+  {
+    "id": 9,
+    "title": "Ruby Coding",
+    "venue": "Kondapur, Hyderabad",
+    "date": "9 Jan 2015",
+    "time": "11:00 AM",
+    "description": "Ruby coding compitition",    
+    "image": "images/ruby.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Python Coding",
+    "venue": "Madhapur, Hyderabad",
+    "date": "10 Jan 2015",
+    "time": "11:00 AM",
+    "description": "Python coding compitition",    
+    "image": "images/python.jpg"
+  },
+  {
+    "id": 11,
+    "title": "C Coding",
+    "venue": "Charminar, Hyderabad",
+    "date": "11 Jan 2015",
+    "time": "11:00 AM",
+    "description": "C coding compitition",    
+    "image": "images/c.jpg"
+  },
+  {
+    "id": 12,
+    "title": "C++ Coding",
+    "venue": "Medhipattanam, Hyderabad",
+    "date": "12 Jan 2015",
+    "time": "11:00 AM",
+    "description": "C++ coding compitition",    
+    "image": "images/cpp.jpg"
+  }
 ];
