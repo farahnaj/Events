@@ -37,3 +37,7 @@ First Look:
 
 7. Future Enhancment :
   Use of Handlbar.js and Backbone.js
+
+Second Look:
+Changes: Handlbar.js is used.
+Future Enhancment : Use of Backbone.js
