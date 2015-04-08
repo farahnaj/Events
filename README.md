@@ -48,5 +48,6 @@ Future Enhancment : Applying click and hover events using Backbone.js
 
 
 Forth Look: 
-Changes: Backbone.js is used to get click event. Two Global objects are created, 1 for backbone functionalty and another for operations. Popover from grid events is replace with overlay with open event. 
+Changes: Backbone.js is used to get click event. Two Global objects are created, 1 for backbone functionalty and another for operations. Popover from grid events is replace with overlay with open event.
+
 Future Enhancment : Use of Angular.js
