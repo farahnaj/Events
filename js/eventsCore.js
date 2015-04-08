@@ -9,9 +9,9 @@ function showView(viewIs)
   // Add loading img to show its loading
   $("#content").html('<img src="images/ajax-spinner.gif"></img>');
 
-  if(viewIs == "show-list")
+  if(viewIs === "show-list")
      displayList();    
-  else if(viewIs == "show-grid")
+  else if(viewIs === "show-grid")
      displayGrid();  
 } 
 
