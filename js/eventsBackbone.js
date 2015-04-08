@@ -50,7 +50,8 @@ App.createView = function (tmplt, data)
         this.render();
     },
     events: {
-        "click .event": "clicked"
+        "click .event": "clicked",
+        "click .event-overlay": "clicked"
     },
     clicked: function(e){
         e.stopPropagation();
@@ -60,7 +61,7 @@ App.createView = function (tmplt, data)
         AppOperations.showEvent(id);
     },
     render: function () {       
-        var html = AppOperations.updateDisplay(tmplt,data);
+        var html = AppOperations.getTemplate(tmplt,data);
         this.$el.html(html);
     }
   });
