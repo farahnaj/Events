@@ -1,9 +1,9 @@
-$(function () {
+jQuery(function () {
 
    // On load display default view.
    $(document).ready(function(){
         // Default view is grid        
-        displayGrid();
+        AppOperations.displayGrid();
     });
 
 /**
@@ -23,6 +23,6 @@ $(function () {
         $(this).addClass("action-active");
 
         // Show selected display view
-        showView(this.id);
+        AppOperations.showView(this.id);
     });   
 });

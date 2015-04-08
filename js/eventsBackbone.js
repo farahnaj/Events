@@ -1,6 +1,6 @@
 var App = {};
 
-$(function () {
+(function () {
 
 // Model defined
 App.EventModel = Backbone.Model.extend({
@@ -37,23 +37,32 @@ App.eventsForCollection = new App.EventCollection(eventsJSON);
 // Create View
 //createView($('#events-grid-template').html() , App.eventsForCollection.toJSON())
 
-});
+})(jQuery);
 
 
 // Create view and display it
-function createView(tmplt, data)
+App.createView = function (tmplt, data)
 {
-App.EventListView = Backbone.View.extend({
+  App.EventListView = Backbone.View.extend({
     el: '#content',
  
     initialize:function(){
         this.render();
     },
+    events: {
+        "click .event": "clicked"
+    },
+    clicked: function(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        var id = $(e.currentTarget).data("id");
+        AppOperations.showEvent(id);
+    },
     render: function () {       
-        var html = updateDisplay(tmplt,data);
+        var html = AppOperations.updateDisplay(tmplt,data);
         this.$el.html(html);
     }
-});
- 
-App.eventsListView = new App.EventListView();
+  });
+ App.eventsListView = new App.EventListView();
 }

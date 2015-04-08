@@ -10,10 +10,10 @@
   <script src="lib/underscore.js"></script>
   <script src="lib/backbone.js"></script>
   <script src="lib/handlebars-v3.0.0.js"></script>
-  <script src="js/eventsBackbone.js"></script>
-  <script src="js/eventsUi.js"></script>
-  <script src="js/eventsCore.js"></script>
   <script src="js/eventsJson.js"></script>
+  <script src="js/eventsBackbone.js"></script>
+  <script src="js/eventsCore.js"></script>
+  <script src="js/eventsUi.js"></script>  
 
 </head>
 <body>
@@ -97,7 +97,7 @@
          </thead>
          <tbody>
           {{#each this}}​
-           <tr class="event c-p" title="{{description}}" id="{{id}}">
+           <tr class="event c-p" title="{{description}}" data-id="{{id}}">
               <td>{{id}}</td>
               <td><img class="small-img" src="{{image}}" title="{{description}}"></img></td>
               <td>{{title}}</td>
@@ -116,7 +116,7 @@
       {{#each this}}​
         <div class="col-xs-6 col-lg-4">
             <a class="popoverData" href="#" data-content="{{description}} at {{venue}} on {{date}},{{time}}." rel="popover" data-placement="bottom" data-original-title="{{title}}" data-trigger="hover">
-                   <img class="large-img event" id="{{id}}" src="{{image}}"></img>
+                   <img class="large-img event" data-id="{{id}}" src="{{image}}"></img>
             </a>
         </div>
       {{/each}}

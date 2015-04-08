@@ -14,7 +14,7 @@
          </thead>
          <tbody>
           {{#each this}}​
-           <tr class="event c-p" title="{{description}}" id="{{id}}">
+           <tr class="event c-p" title="{{description}}" data-id="{{id}}">
               <td>{{id}}</td>
               <td><img class="small-img" src="{{image}}" title="{{description}}"></img></td>
               <td>{{title}}</td>
@@ -34,7 +34,7 @@
       {{#each this}}​
         <div class="col-xs-6 col-lg-4">
             <a class="popoverData" href="#" data-content="{{description}} at {{venue}} on {{date}},{{time}}." rel="popover" data-placement="bottom" data-original-title="{{title}}" data-trigger="hover">
-                   <img class="large-img event" id="{{id}}" src="{{image}}"></img>
+                   <img class="large-img event" data-id="{{id}}" src="{{image}}"></img>
             </a>
         </div>
       {{/each}}
