@@ -1,5 +1,5 @@
 /* This code is with basic javascript,jquery,bootstrap, handlebar.js and backbone.js*/
-var AppOperations ={
+var AppOperations = {
 
 /** 
  * As per selection , update display.
@@ -37,9 +37,6 @@ displayGrid : function ()
 
   // Update display
   App.createView($("#events-grid-template").html(), App.eventsForCollection.toJSON());
-
-  // Activate popover
-  $('.popoverData').popover();
 },
 
 // Show specific given event
@@ -65,7 +62,7 @@ showEvent : function (eventId)
 /**
  * Gets template, comile it and fills data. Updates display.
  */
-updateDisplay : function (tmplt,data)
+getTemplate : function (tmplt,data)
 {
   //Compile the template​
   var theTemplate = Handlebars.compile (tmplt);     

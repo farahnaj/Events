@@ -28,14 +28,18 @@
     </div>
 </script>
 
-
 <script type="x-handlebars-template" id="events-grid-template">
      <div class="row">
       {{#each this}}​
-        <div class="col-xs-6 col-lg-4">
-            <a class="popoverData" href="#" data-content="{{description}} at {{venue}} on {{date}},{{time}}." rel="popover" data-placement="bottom" data-original-title="{{title}}" data-trigger="hover">
-                   <img class="large-img event" data-id="{{id}}" src="{{image}}"></img>
-            </a>
+        <div class="col-xs-6 col-lg-4 event-body">
+          <img class="large-img event c-p" data-id="{{id}}" src="{{image}}"></img>
+          <div class="event-overlay" data-id="{{id}}">
+             <b>Title: </b>{{title}}<br>
+             <b>Description: </b>{{description}}<br>
+             <b>Date: </b>{{date}}<br>
+             <b>Time: </b>{{time}}<br>
+             <b>Venue: </b>{{venue}}
+          </div>
         </div>
       {{/each}}
      </div>
