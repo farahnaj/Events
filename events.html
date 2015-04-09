@@ -40,11 +40,11 @@
                  <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Farahnaj <span class="caret"></span></a>
                      <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
+                          <li><a href="#">Profile</a></li>
+                          <li><a href="#" id="menu-toggle">Toggle Side Menu</a></li>
+                          <li><a href="#">Inbox</a></li>
                           <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">Logout</a></li>
                      </ul>
                  </li>
              </ul>
@@ -52,33 +52,41 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"><span class="sr-only">(current)</span></a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
-            <li><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
-          </ul>
-          <ul class="nav nav-sidebar">            
-            <li><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
-            <li><a href=""><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
-            <li><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>
-          </ul>
-        </div>
+<div class="" id="wrapper">
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-2 main-content">
-          <h1 class="page-header">Upcoming Events</h1>
-          <div class="header-actions">
-               <span class="glyphicon glyphicon-th v-img action-active header-action" aria-hidden="true" id="show-grid"></span> 
-               <span class="glyphicon glyphicon-list v-img header-action" aria-hidden="true" id="show-list"></span>
-               <span class="glyphicon glyphicon-calendar v-img header-action" aria-hidden="true" id="show-calendar"></span>
-          </div>
-          <div id="content"><img src="images/ajax-spinner.gif"></img></div>         
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
+                <li><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>                
+            </ul>
         </div>
-      </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12" id="main-content">
+                        <h1 class="page-header">Upcoming Events</h1>
+                        <div class="header-actions">
+                          <span class="glyphicon glyphicon-th action-img action-active header-action" aria-hidden="true" id="show-grid"></span> 
+                          <span class="glyphicon glyphicon-list action-img header-action" aria-hidden="true" id="show-list"></span>
+                          <span class="glyphicon glyphicon-calendar action-img header-action" aria-hidden="true" id="show-calendar"></span>
+                        </div>
+                        <div id="content"><img src="images/ajax-spinner.gif"></img></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
 
 <!-- Templates to show grid and list view using handlbar.js -->
@@ -116,7 +124,7 @@
       {{#each this}}​
         <div class="col-xs-6 col-lg-4 event-body">
           <img class="large-img event c-p" data-id="{{id}}" src="{{image}}"></img>
-          <div class="event-overlay" data-id="{{id}}">
+          <div class="event-overlay c-p" data-id="{{id}}">
              <b>Title: </b>{{title}}<br>
              <b>Description: </b>{{description}}<br>
              <b>Date: </b>{{date}}<br>
