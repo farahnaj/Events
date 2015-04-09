@@ -24,5 +24,11 @@ jQuery(function () {
 
         // Show selected display view
         AppOperations.showView(this.id);
-    });   
+    });
+
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        console.log("menu-toggle");
+        $("#wrapper").toggleClass("toggled");
+    }); 
 });
