@@ -54,3 +54,11 @@ Future Enhancment : Use of Angular.js
 Fifth Look:
 Changes : Sider bar toggle function(option) added in main menu in profile drop down.
 
+Sixth Look:
+Changes:
+1. Angular.js introduce
+2. Grid view, List view, Single Event view - Working
+3. Search by title added
+
+Future Enhancment : Add, Edit, Delete functionality for Event.
+
