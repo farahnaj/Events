@@ -9,7 +9,7 @@ var eventsJSON = [
     "date": "12 Dec 2015",
     "time": "10:00 AM",
     "description": "Birthday party of all who born in Dec for All Emp",    
-    "image": "images/bd.jpg"
+    "image": "images/bd.png"
   },
  {
     "id": 2,
@@ -18,7 +18,7 @@ var eventsJSON = [
     "date": "2 Jan 2015",
     "time": "11:00 AM",
     "description": "Java coding compitition",    
-    "image": "images/java.jpg"
+    "image": "images/java.png"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@ var eventsJSON = [
     "date": "3 Jan 2015",
     "time": "11:00 AM",
     "description": "Java script coding compitition",    
-    "image": "images/js.jpg"
+    "image": "images/js.png"
   },
   {
     "id": 4,
@@ -36,7 +36,7 @@ var eventsJSON = [
     "date": "4 Jan 2015",
     "time": "11:00 AM",
     "description": "VB coding compitition",    
-    "image": "images/vb.jpg"
+    "image": "images/vb.png"
   },
   {
     "id": 5,
@@ -45,7 +45,7 @@ var eventsJSON = [
     "date": "5 Jan 2015",
     "time": "11:00 AM",
     "description": "CSS coding compitition",    
-    "image": "images/css.jpg"
+    "image": "images/css.png"
   },
   {
     "id": 6,
@@ -54,7 +54,7 @@ var eventsJSON = [
     "date": "6 Jan 2015",
     "time": "11:00 AM",
     "description": "HTML coding compitition",    
-    "image": "images/html.jpg"
+    "image": "images/html.png"
   },
   {
     "id": 7,
@@ -63,7 +63,7 @@ var eventsJSON = [
     "date": "7 Jan 2015",
     "time": "11:00 AM",
     "description": "JQuery coding compitition",    
-    "image": "images/jq.jpg"
+    "image": "images/jq.png"
   },
   {
     "id": 8,
@@ -72,7 +72,7 @@ var eventsJSON = [
     "date": "8 Jan 2015",
     "time": "11:00 AM",
     "description": "Shell Script coding compitition",    
-    "image": "images/ss.jpg"
+    "image": "images/ss.png"
   },
   {
     "id": 9,
@@ -81,7 +81,7 @@ var eventsJSON = [
     "date": "9 Jan 2015",
     "time": "11:00 AM",
     "description": "Ruby coding compitition",    
-    "image": "images/ruby.jpg"
+    "image": "images/ruby.png"
   },
   {
     "id": 10,
@@ -90,7 +90,7 @@ var eventsJSON = [
     "date": "10 Jan 2015",
     "time": "11:00 AM",
     "description": "Python coding compitition",    
-    "image": "images/python.jpg"
+    "image": "images/python.png"
   },
   {
     "id": 11,
@@ -99,7 +99,7 @@ var eventsJSON = [
     "date": "11 Jan 2015",
     "time": "11:00 AM",
     "description": "C coding compitition",    
-    "image": "images/c.jpg"
+    "image": "images/c.png"
   },
   {
     "id": 12,
@@ -108,6 +108,6 @@ var eventsJSON = [
     "date": "12 Jan 2015",
     "time": "11:00 AM",
     "description": "C++ coding compitition",    
-    "image": "images/cpp.jpg"
+    "image": "images/cpp.png"
   }
 ];

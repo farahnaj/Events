@@ -55,7 +55,7 @@
             <ul class="sidebar-nav">
                 <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"></span></a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true" ng-click="event.editEvent()"></span></a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
@@ -68,17 +68,15 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12" id="main-content">
+                  <div class="col-lg-12" id="main-content">
                         <h1 class="page-header">Upcoming Events</h1>
                         <div class="header-actions">
-                          <a href="#gridView"><span class="glyphicon glyphicon-th action-img action-active header-action" aria-hidden="true" id="show-grid"></span> </a>
-                          <a href="#listView"><span class="glyphicon glyphicon-list action-img header-action" aria-hidden="true" id="show-list"></span></a>
-                          <a href="#calendarView"><span class="glyphicon glyphicon-calendar action-img header-action" aria-hidden="true" id="show-calendar"></span></a>
+                           <a href="#gridView"><span class="glyphicon glyphicon-th action-img action-active header-action" aria-hidden="true" id="show-grid"></span> </a>
+                           <a href="#listView"><span class="glyphicon glyphicon-list action-img header-action" aria-hidden="true" id="show-list"></span></a>
+                           <a href="#calendarView"><span class="glyphicon glyphicon-calendar action-img header-action" aria-hidden="true" id="show-calendar"></span></a>
                         </div>
                         <div id="content" ng-view><img src="images/ajax-spinner.gif"></img></div>
-                    </div>
-                </div>
+                  </div>                
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -130,7 +128,13 @@
 
 <script type="text/ng-template" id="eventView.htm">
     <div class="panel panel-primary">
-      <div class="panel-heading"><h3 class="panel-title">{{event.title}}</h3></div>
+      <div class="panel-heading">
+           <h3 class="panel-title">{{event.title}}</h3>
+           <div class="event-actions">
+             <span class="glyphicon glyphicon-pencil event-action" aria-hidden="true" ng-click="event.editEvent()"></span>
+             <span class="glyphicon glyphicon-trash event-action" aria-hidden="true" ng-click="event.deleteEvent()"></span>
+           </div>
+      </div>
       <div class="panel-body">
            <img class="large-img" src="{{event.image}}"></img><br>
            <b>Description: </b>{{event.description}}<br>
@@ -143,6 +147,67 @@
 
 <script type="text/ng-template" id="calendarView.htm">
     <img src="images/ajax-spinner.gif">
+</script>
+
+<script type="text/ng-template" id="formView.htm">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+           <h3 class="panel-title">Edit : {{event.title}}</h3>          
+      </div>
+      <div class="panel-body">
+           <img class="large-img" src="{{event.image}}"></img><br>
+           <form class="form-horizontal" name="eventForm"  ng-submit="event.save(event, eventForm.$valid)" novalidate>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Title:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="event.title" placeholder="Title" required>
+    <span style="color:red" ng-show="event.title.$dirty && event.title.$invalid || event.title.$error.required">Title is required.</span>
+    </div>
+  </div> 
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Description:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="event.description" placeholder="Description" required>
+    <span style="color:red" ng-show="event.description.$dirty && event.description.$invalid || event.description.$error.required">Description is required.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Date:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="event.date" placeholder="eg. 12/03/2015" required>
+    <span style="color:red" ng-show="event.date.$dirty && event.date.$invalid || event.date.$error.required">Date is required.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Time:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="event.time" placeholder="eg. 12.30 AM" required>
+    <span style="color:red" ng-show="event.time.$dirty && event.time.$invalid || event.time.$error.required">Time is required.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Venue:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="event.venue" placeholder="Venue" required>
+    <span style="color:red" ng-show="event.venue.$dirty && event.venue.$invalid || event.venue.$error.required">Venue is required.</span>
+    </div>
+  </div>
+
+  <button ng-disabled="event.title.$dirty && event.title.$invalid ||
+        event.description.$dirty && event.description.$invalid ||
+        event.time.$dirty && event.time.$invalid ||
+        event.date.$dirty && event.date.$invalid ||
+        event.venue.$dirty && event.venue.$invalid || eventForm.$invalid"
+        type="submit">Save</button>
+</form>
+      </div>
+    </div>
+
+
+    
+
+
+
 </script>
    </body>
 </html>

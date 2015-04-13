@@ -248,3 +248,17 @@ transform: translateY(-100%);
         margin-right: 0;
     }
 }
+
+/* Event action edit, delete */
+.event-actions{
+float: right;
+margin-top: -18px;
+display:none;
+}
+
+.event-action{
+padding:2px;
+cursor: pointer;
+}
+
+.panel-primary:hover .event-actions{ display:block; }
