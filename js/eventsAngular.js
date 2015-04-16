@@ -131,7 +131,7 @@ eventsApp.run(function($rootScope,$interval){
 
      $scope.save = function(event,isValid) {
          console.log(event);
-          console.log(isValid);
+         console.log(isValid);
      
          // check to make sure the form is completely valid
          if(!isValid)

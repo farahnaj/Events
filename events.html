@@ -138,7 +138,7 @@
     <script type="text/ng-template" id="eventView.htm">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">{{event.title}}</h3>
+                <h3 class="panel-title" ng-bind="event.title"></h3>
                 <div class="event-actions">
                     <span class="glyphicon glyphicon-pencil event-action" aria-hidden="true" ng-click="event.editEvent()"></span>
                     <span class="glyphicon glyphicon-trash event-action" aria-hidden="true" ng-click="event.deleteEvent()"></span>
@@ -147,13 +147,13 @@
             <div class="panel-body">
                 <img class="large-img" src="{{event.image}}"></img>
                 <br>
-                <b>Description: </b>{{event.description}}
+                <b>Description: </b><span ng-bind="event.description"></span>
                 <br>
-                <b>Date: </b>{{event.date | date:'dd MMM yyyy'}}
+                <b>Date: </b><span ng-bind="event.date | date:'dd MMM yyyy'"></span>
                 <br>
-                <b>Time: </b>{{event.time | date:'hh:mm a'}}
+                <b>Time: </b><span ng-bind="event.time | date:'hh:mm a'"></span>
                 <br>
-                <b>Venue: </b>{{event.venue}}
+                <b>Venue: </b><span ng-bind="event.venue"></span>
             </div>
         </div>
     </script>
