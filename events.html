@@ -1,66 +1,69 @@
 <!doctype html>
 <html ng-app="eventsApp">
-   <head>
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="css/events.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-      <script src="lib/angular.min.js"></script>
-      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
-      <script src="js/eventsJson.js"></script>
-      <script src="js/eventsCore.js"></script>
-      <script src="js/eventsAngular.js"></script>
-      <script src="js/eventsUi.js"></script>
-   </head>
-   <body ng-controller="EventController" >   
+
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/events.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+    <script src="data/eventsJson.js"></script>
+    <script src="js/eventsCore.js"></script>
+    <script src="js/eventsAngular.js"></script>
+    <script src="js/eventsUi.js"></script>
+</head>
+
+<body ng-controller="EventController">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#events-collapse" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Events</a>
-        </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#events-collapse" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Events</a>
+            </div>
 
-        <div class="collapse navbar-collapse" id="events-collapse">
-             <div class="navbar-left search-controls" role="search">
-                 <input class="search-input search-query" placeholder="Search..." type="text" ng-model="events.eventsList.search">
-                 <span class="glyphicon glyphicon-search" aria-hidden="true" style="float: right; align-self: center;"></span>
-             </div>          
-             <ul class="nav navbar-nav navbar-right">
-                 <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-                 <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="events.name"> <span class="caret"></span></a>
-                     <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Profile</a></li>
-                          <li><a href="#" id="menu-toggle">Toggle Side Menu</a></li>
-                          <li><a href="#">Inbox</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Logout</a></li>
-                     </ul>
-                 </li>
-             </ul>
+            <div class="collapse navbar-collapse" id="events-collapse">
+                <div class="navbar-left search-controls" role="search">
+                    <input class="search-input search-query" placeholder="Search..." type="text" ng-model="events.eventsList.search">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true" style="float: right; align-self: center;"></span>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="#">{{AssignedDate.now() | date:'dd MMM yyyy HH:mm:ss'}}</a></li>
+                    <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="events.name"> <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#" id="menu-toggle">Toggle Side Menu</a></li>
+                            <li><a href="#">Inbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-<div class="" id="wrapper">
+    <div class="" id="wrapper">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="active"><a href="#"><span class="glyphicon glyphicon-home v-img" aria-hidden="true"></span></a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true" ng-click="event.editEvent()"></span></a></li>
+                <li><a class="c-p" ng-click="addEvent()"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
-                <li><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>                
+                <li><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -68,146 +71,162 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                  <div class="col-lg-12" id="main-content">
-                        <h1 class="page-header">Upcoming Events</h1>
-                        <div class="header-actions">
-                           <a href="#gridView"><span class="glyphicon glyphicon-th action-img action-active header-action" aria-hidden="true" id="show-grid"></span> </a>
-                           <a href="#listView"><span class="glyphicon glyphicon-list action-img header-action" aria-hidden="true" id="show-list"></span></a>
-                           <a href="#calendarView"><span class="glyphicon glyphicon-calendar action-img header-action" aria-hidden="true" id="show-calendar"></span></a>
-                        </div>
-                        <div id="content" ng-view><img src="images/ajax-spinner.gif"></img></div>
-                  </div>                
+                <div class="col-lg-12" id="main-content">
+                    <h1 class="page-header">Upcoming Events</h1>
+                    <div class="header-actions">
+                        <a href="#gridView"><span class="glyphicon glyphicon-th action-img action-active header-action" aria-hidden="true" id="show-grid"></span> </a>
+                        <a href="#listView"><span class="glyphicon glyphicon-list action-img header-action" aria-hidden="true" id="show-list"></span></a>
+                        <a href="#calendarView"><span class="glyphicon glyphicon-calendar action-img header-action" aria-hidden="true" id="show-calendar"></span></a>
+                    </div>
+                    <div id="content" ng-view><img src="images/ajax-spinner.gif"></img>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
 
     </div>
 
-<!-- Templates to show grid and list view using handlbar.js -->
-<script type="text/ng-template" id="listView.htm">
-     <div class="table-responsive">
-       <table class="table table-striped">
-         <thead>
-            <tr>
-              <th>#</th>
-              <th>Event</th>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Venue</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
-              <td>{{event.id}}</td>
-              <td><img class="small-img" src="{{event.image}}" title="{{event.description}}"></img></td>
-              <td>{{event.title}}</td>
-              <td>{{event.date}}</td>
-              <td>{{event.time}}</td>
-              <td>{{event.venue}}</td>
-           </tr>          
-         </tbody>
-       </table>
-    </div>
-</script>
-
-<script type="text/ng-template" id="gridView.htm">
-     <div class="row">
-        <div class="col-xs-6 col-lg-4 event-body" ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
-          <img class="large-img event c-p" ng-click='showEvent(event)' src="{{event.image}}"></img>
-          <div class="event-overlay c-p" ng-click='showEvent(event)'>
-             <b>Title: </b>{{event.title}}<br>
-             <b>Description: </b>{{event.description}}<br>
-             <b>Date: </b>{{event.date}}<br>
-             <b>Time: </b>{{event.time}}<br>
-             <b>Venue: </b>{{event.venue}}
-          </div>
+    <!-- Templates to show grid and list view using handlbar.js -->
+    <script type="text/ng-template" id="listView.htm">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Event</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
+                        <td>{{event.id}}</td>
+                        <td><img class="small-img" src="{{event.image}}" title="{{event.description}}"></img>
+                        </td>
+                        <td>{{event.title}}</td>
+                        <td>{{event.date | date:'dd MMM yyyy'}}</td>
+                        <td>{{event.time | date:'hh:mm a'}}</td>
+                        <td>{{event.venue}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
-</script>
+    </script>
 
-<script type="text/ng-template" id="eventView.htm">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-           <h3 class="panel-title">{{event.title}}</h3>
-           <div class="event-actions">
-             <span class="glyphicon glyphicon-pencil event-action" aria-hidden="true" ng-click="event.editEvent()"></span>
-             <span class="glyphicon glyphicon-trash event-action" aria-hidden="true" ng-click="event.deleteEvent()"></span>
-           </div>
-      </div>
-      <div class="panel-body">
-           <img class="large-img" src="{{event.image}}"></img><br>
-           <b>Description: </b>{{event.description}}<br>
-           <b>Date: </b>{{event.date}}<br>
-           <b>Time: </b>{{event.time}}<br>
-           <b>Venue: </b>{{event.venue}}
-      </div>
-    </div>
-</script>
+    <script type="text/ng-template" id="gridView.htm">
+        <div class="row">
+            <div class="col-xs-6 col-lg-4 event-body" ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
+                <img class="large-img event c-p" ng-click='showEvent(event)' src="{{event.image}}"></img>
+                <div class="event-overlay c-p" ng-click='showEvent(event)'>
+                    <b>Title: </b>{{event.title}}
+                    <br>
+                    <b>Description: </b>{{event.description}}
+                    <br>
+                    <b>Date: </b>{{event.date | date:'dd MMM yyyy'}}
+                    <br>
+                    <b>Time: </b>{{event.time | date:'hh:mm a'}}
+                    <br>
+                    <b>Venue: </b>{{event.venue}}
+                </div>
+            </div>
+        </div>
+    </script>
 
-<script type="text/ng-template" id="calendarView.htm">
-    <img src="images/ajax-spinner.gif">
-</script>
+    <script type="text/ng-template" id="eventView.htm">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{event.title}}</h3>
+                <div class="event-actions">
+                    <span class="glyphicon glyphicon-pencil event-action" aria-hidden="true" ng-click="event.editEvent()"></span>
+                    <span class="glyphicon glyphicon-trash event-action" aria-hidden="true" ng-click="event.deleteEvent()"></span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <img class="large-img" src="{{event.image}}"></img>
+                <br>
+                <b>Description: </b>{{event.description}}
+                <br>
+                <b>Date: </b>{{event.date | date:'dd MMM yyyy'}}
+                <br>
+                <b>Time: </b>{{event.time | date:'hh:mm a'}}
+                <br>
+                <b>Venue: </b>{{event.venue}}
+            </div>
+        </div>
+    </script>
 
-<script type="text/ng-template" id="formView.htm">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-           <h3 class="panel-title">Edit : {{event.title}}</h3>          
-      </div>
-      <div class="panel-body">
-           <img class="large-img" src="{{event.image}}"></img><br>
-           <form class="form-horizontal" name="eventForm"  ng-submit="event.save(event, eventForm.$valid)" novalidate>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Title:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" ng-model="event.title" placeholder="Title" required>
-    <span style="color:red" ng-show="event.title.$dirty && event.title.$invalid || event.title.$error.required">Title is required.</span>
-    </div>
-  </div> 
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Description:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" ng-model="event.description" placeholder="Description" required>
-    <span style="color:red" ng-show="event.description.$dirty && event.description.$invalid || event.description.$error.required">Description is required.</span>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Date:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" ng-model="event.date" placeholder="eg. 12/03/2015" required>
-    <span style="color:red" ng-show="event.date.$dirty && event.date.$invalid || event.date.$error.required">Date is required.</span>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Time:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" ng-model="event.time" placeholder="eg. 12.30 AM" required>
-    <span style="color:red" ng-show="event.time.$dirty && event.time.$invalid || event.time.$error.required">Time is required.</span>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Venue:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" ng-model="event.venue" placeholder="Venue" required>
-    <span style="color:red" ng-show="event.venue.$dirty && event.venue.$invalid || event.venue.$error.required">Venue is required.</span>
-    </div>
-  </div>
+    <script type="text/ng-template" id="calendarView.htm">
+        <img src="images/ajax-spinner.gif">
+    </script>
 
-  <button ng-disabled="event.title.$dirty && event.title.$invalid ||
-        event.description.$dirty && event.description.$invalid ||
-        event.time.$dirty && event.time.$invalid ||
-        event.date.$dirty && event.date.$invalid ||
-        event.venue.$dirty && event.venue.$invalid || eventForm.$invalid"
-        type="submit">Save</button>
-</form>
-      </div>
-    </div>
+    <script type="text/ng-template" id="formView.htm">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{event.status}} : {{event.title}}</h3>
+            </div>
+            <div class="panel-body">
+                <img class="large-img" src="{{event.image}}"></img>
+                <br>
+                <!-- FORM -->
+                <!-- pass in the variable if our form is valid or invalid -->
+                <form class="form-horizontal" name="eventForm" id="eventForm" ng-submit="save(event,eventForm.$valid)" novalidate>
+                    <!-- Title -->
+                    <div class="form-group" ng-class="{ 'has-error' : eventForm.eTitle.$invalid && !eventForm.eTitle.$pristine }">
+                        <label class="col-sm-2 control-label">Title*:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="eTitle" ng-model="event.title" placeholder="Title"  ng-minlength=5 required/>
+                            <p ng-show="eventForm.eTitle.$error.minlength" class="help-block">Event title is too short.</p>
+                            <p ng-show="eventForm.eTitle.$invalid && !eventForm.eTitle.$pristine" class="help-block">Event title is required.</p>
+                        </div>
+                    </div>
 
+                    <!-- Description -->
+                    <div class="form-group" ng-class="{ 'has-error' : eventForm.eDescription.$invalid && !eventForm.eDescription.$pristine }">
+                        <label class="col-sm-2 control-label">Description*:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="eDescription" ng-model="event.description" placeholder="Description"  ng-minlength=5 required/>
+                            <p ng-show="eventForm.eDescription.$invalid && !eventForm.eDescription.$pristine" class="help-block">Event description is required.</p>
+                            <p ng-show="eventForm.eDescription.$error.minlength" class="help-block">Event description is too short.</p>
+                        </div>
+                    </div>
 
-    
+                    <!-- Date -->
+                    <div class="form-group" ng-class="{ 'has-error' : eventForm.eDate.$invalid && !eventForm.eDate.$pristine }">
+                        <label class="col-sm-2 control-label">Date*:</label>
+                        <div class="col-sm-10">
+                          <input type="date" class="form-control" name="eDate" ng-model="event.date" required/>
+                          <p ng-show="eventForm.eDate.$invalid && !eventForm.eDate.$pristine" class="help-block">Event date is required.</p>
+                        </div>
+                    </div>
 
+                    <!-- Time -->
+                    <div class="form-group" ng-class="{ 'has-error' : eventForm.eTime.$invalid && !eventForm.eTime.$pristine }">
+                        <label class="col-sm-2 control-label">Time*:</label>
+                        <div class="col-sm-10">
+                            <input type="time" class="form-control" name="eTime" ng-model="event.time" required/>
+                            <p ng-show="eventForm.eTime.$invalid && !eventForm.eTime.$pristine" class="help-block">Event time is required.</p>
+                        </div>
+                    </div>
 
+                    <!-- Venue -->
+                    <div class="form-group" ng-class="{ 'has-error' : eventForm.eVenue.$invalid && !eventForm.eVenue.$pristine }">
+                        <label class="col-sm-2 control-label">Venue*:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="eVenue" ng-model="event.venue" placeholder="Venue"  ng-minlength=5 required/>
+                            <p ng-show="eventForm.eVenue.$invalid && !eventForm.eVenue.$pristine" class="help-block">Event venue is required.</p>
+                            <p ng-show="eventForm.eVenue.$error.minlength" class="help-block">Event venue is too short.</p>
+                        </div>
+                    </div>
 
-</script>
-   </body>
+                    <!-- Submit Button -->
+                    <button type="submit" ng-disabled="eventForm.$invalid">Save</button>                    
+                </form>
+            </div>
+        </div>
+    </script>
+</body>
+
 </html>

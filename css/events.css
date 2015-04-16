@@ -262,3 +262,11 @@ cursor: pointer;
 }
 
 .panel-primary:hover .event-actions{ display:block; }
+
+#eventForm input.ng-invalid.ng-dirty {
+        background-color: #FA787E;
+      }
+    
+#eventForm input.ng-valid.ng-dirty {
+        background-color: #78FA89;
+      }
