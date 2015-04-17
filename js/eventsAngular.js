@@ -87,21 +87,24 @@ eventsApp.run(function($rootScope,$interval){
      $rootScope.MainHeading = "Event";
 
      // Remove active class from all other header actions
-     $('.action-active').removeClass("action-active");
+     $jQ('.action-active').removeClass("action-active");
 
      $scope.event.deleteEvent = function() {
          console.log($scope.event);
          
-         // Remove current event from global json array of event
-         eventsJSON = $.grep(eventsJSON, function(e) {
-             return e.id != $scope.event.id
-         });
-
-         // Go to list view after delete
-         window.location = '#/listView';
+         // hide modal from display
+         $jQ("#confirmModal").modal('hide');
 
          // remove modal backdrop from display
-         $(".modal-backdrop").remove();
+         $jQ(".modal-backdrop").remove();
+
+         // Remove current event from global json array of event
+         eventsJSON = $jQ.grep(eventsJSON, function(e) {
+             return e.id !== $scope.event.id
+         });
+         
+         // Go to list view after delete
+         window.location = '#/listView';         
      };
 
      $scope.event.editEvent = function() {
