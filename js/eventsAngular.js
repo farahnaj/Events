@@ -85,12 +85,17 @@ eventsApp.run(function($rootScope,$interval){
 
      $scope.event.deleteEvent = function() {
          console.log($scope.event);
-         if (!confirm("Are you sure you want to delete event?"))
-             return;
+         
+         // Remove current event from global json array of event
          eventsJSON = $.grep(eventsJSON, function(e) {
              return e.id != $scope.event.id
          });
+
+         // Go to list view after delete
          window.location = '#/listView';
+
+         // remove modal backdrop from display
+         $(".modal-backdrop").remove();
      };
 
      $scope.event.editEvent = function() {
