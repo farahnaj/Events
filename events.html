@@ -103,13 +103,13 @@
                 </thead>
                 <tbody>
                     <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
-                        <td>{{event.id}}</td>
+                        <td ng-bind="event.id"></td>
                         <td><img class="small-img" src="{{event.image}}" title="{{event.description}}"></img>
                         </td>
-                        <td>{{event.title}}</td>
-                        <td>{{event.date | date:'dd MMM yyyy'}}</td>
-                        <td>{{event.time | date:'hh:mm a'}}</td>
-                        <td>{{event.venue}}</td>
+                        <td ng-bind="event.title"></td>
+                        <td ng-bind="event.date | date:'dd MMM yyyy'"></td>
+                        <td ng-bind="event.time | date:'hh:mm a'"></td>
+                        <td ng-bind="event.venue"></td>
                     </tr>
                 </tbody>
             </table>
@@ -123,13 +123,13 @@
                 <div class="event-overlay c-p" ng-click='showEvent(event)'>
                     <b>Title: </b>{{event.title}}
                     <br>
-                    <b>Description: </b>{{event.description}}
+                    <b>Description: </b><span ng-bind="event.description"></span>
                     <br>
-                    <b>Date: </b>{{event.date | date:'dd MMM yyyy'}}
+                    <b>Date: </b><span ng-bind="event.date | date:'dd MMM yyyy'"></span>
                     <br>
-                    <b>Time: </b>{{event.time | date:'hh:mm a'}}
+                    <b>Time: </b><span ng-bind="event.time | date:'hh:mm a'"></span>
                     <br>
-                    <b>Venue: </b>{{event.venue}}
+                    <b>Venue: </b><span ng-bind="event.venue"></span>
                 </div>
             </div>
         </div>
