@@ -31,30 +31,34 @@
 
 eventsApp.run(function($rootScope,$interval){
     $rootScope.AssignedDate = Date; // 'Date' could be assigned too of course:)
-    
+    $rootScope.MainHeading = "Upcoming Events";
+
     $interval(function(){
         // nothing is required here, interval triggers digest automaticaly
     },1000)
 });
 
- eventsApp.controller('EventController', function($scope) {
+ eventsApp.controller('EventController', function($rootScope, $scope) {
      $scope.events = {};
      $scope.events.name = "FarahnajI";
      $scope.events.eventsList = eventsJSON;
+     $rootScope.MainHeading = "Upcoming Events";
 
      // Change active class of header action
      AppOperations.changeClass("#show-calendar");
 
      $scope.addEvent = function() {
+        $rootScope.MainHeading = "New Event"
         var id = parseInt(eventsJSON[eventsJSON.length - 1].id);
         var index = id + 1
         window.location = '#/formView/' + index;
      };
  });
 
- eventsApp.controller('GridViewController', function($scope) {
+ eventsApp.controller('GridViewController', function($rootScope, $scope) {
      $scope.events = {};
      $scope.events.eventsList = eventsJSON;
+     $rootScope.MainHeading = "Upcoming Events";
      $scope.showEvent = function(selectedEvent) {
          var selectedEventIndex = eventsJSON.indexOf(selectedEvent);
          window.location = '#/eventView/' + selectedEventIndex;
@@ -64,9 +68,10 @@ eventsApp.run(function($rootScope,$interval){
      AppOperations.changeClass("#show-grid");
  });
 
- eventsApp.controller('ListViewController', function($scope) {
+ eventsApp.controller('ListViewController', function($rootScope, $scope) {
      $scope.events = {};
      $scope.events.eventsList = eventsJSON;
+     $rootScope.MainHeading = "Upcoming Events";
      $scope.showEvent = function(selectedEvent) {
          var selectedEventIndex = eventsJSON.indexOf(selectedEvent);
          window.location = '#/eventView/' + selectedEventIndex;
@@ -76,9 +81,10 @@ eventsApp.run(function($rootScope,$interval){
      AppOperations.changeClass("#show-list");
  });
 
- eventsApp.controller('EventViewController', function($scope, $location, $routeParams) {
+ eventsApp.controller('EventViewController', function($rootScope, $scope, $location, $routeParams) {
      $scope.eventIndex = $routeParams.eventIndex;
      $scope.event = eventsJSON[$scope.eventIndex];
+     $rootScope.MainHeading = "Event";
 
      // Remove active class from all other header actions
      $('.action-active').removeClass("action-active");
@@ -100,6 +106,7 @@ eventsApp.run(function($rootScope,$interval){
 
      $scope.event.editEvent = function() {
          console.log($scope.event);
+         $rootScope.MainHeading = "Edit Event";
          window.location = '#/formView/' + $scope.eventIndex;
      };
  });
