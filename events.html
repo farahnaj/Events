@@ -34,7 +34,9 @@
                     <span class="glyphicon glyphicon-search" aria-hidden="true" style="float: right; align-self: center;"></span>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <a href="#" ng-bind="AssignedDate.now() | date:'dd MMM yyyy HH:mm:ss'"></a></li>
+                    <li>
+                        <a href="#" ng-bind="AssignedDate.now() | date:'dd MMM yyyy HH:mm:ss'"></a>
+                    </li>
                     <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="events.name"> <span class="caret"></span></a>
@@ -102,7 +104,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
+                    <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event.id)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
                         <td ng-bind="event.id"></td>
                         <td><img class="small-img" src="{{event.image}}" title="{{event.description}}"></img>
                         </td>
@@ -119,8 +121,8 @@
     <script type="text/ng-template" id="gridView.htm">
         <div class="row">
             <div class="col-xs-6 col-lg-4 event-body" ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
-                <img class="large-img event c-p" ng-click='showEvent(event)' src="{{event.image}}"></img>
-                <div class="event-overlay c-p" ng-click='showEvent(event)'>
+                <img class="large-img event c-p" ng-click='showEvent(event.id)' src="{{event.image}}"></img>
+                <div class="event-overlay c-p" ng-click='showEvent(event.id)'>
                     <b>Title: </b>{{event.title}}
                     <br>
                     <b>Description: </b><span ng-bind="event.description"></span>

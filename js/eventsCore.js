@@ -10,5 +10,13 @@ var AppOperations = {
 
         // Add active class to this
         $jQ(elmnt).addClass("action-active");
+    },
+
+    // Gets event from json array by event id
+    getEvent: function(eventId) {
+        for (var i = 0; i < eventsJSON.length; i++) {
+            if (eventId == eventsJSON[i].id)
+                return eventsJSON[i];
+        }
     }
 };
