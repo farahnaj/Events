@@ -95,16 +95,19 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th> 
+                            <a href="" ng-click="predicate = 'id'; reverse=false">#</a>
+                            (<a href="" ng-click="predicate = '-id'; reverse=false">^</a>)
+                        </th>
                         <th>Event</th>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Venue</th>
+                        <th><a href="" ng-click="predicate = 'title'; reverse=!reverse">Title</a></th>
+                        <th><a href="" ng-click="predicate = 'date'; reverse=!reverse">Date</a></th>
+                        <th><a href="" ng-click="predicate = 'time'; reverse=!reverse">Time</a></th>
+                        <th><a href="" ng-click="predicate = 'venue'; reverse=!reverse">Venue</a></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event.id)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
+                    <tr class="event c-p" title="{{event.description}}" ng-click='showEvent(event.id)' ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:predicate:reverse">
                         <td ng-bind="event.id"></td>
                         <td><img class="small-img" src="{{event.image}}" title="{{event.description}}"></img>
                         </td>

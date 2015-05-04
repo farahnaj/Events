@@ -87,6 +87,7 @@
      // Get data
      $scope.events = {};
      $scope.events.eventsList = eventsJSON;
+     $scope.predicate = '-id';
 
      // Changes main content heading
      $rootScope.MainHeading = "Upcoming Events";
