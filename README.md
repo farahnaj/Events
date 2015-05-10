@@ -4,8 +4,8 @@ Training Code
 First Look:
 
 1. How to use code?
-  i. Download files/folder.
-  ii. Clone repository.
+  - Download files/folder.
+  - Clone repository.
 
 2. How to run code?
   After fetching code, just double click on events.html, It will open events page in browser.
