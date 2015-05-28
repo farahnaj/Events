@@ -124,7 +124,12 @@
     <script type="text/ng-template" id="gridView.htm">
         <div class="row">
             <div class="col-xs-6 col-lg-4 event-body" ng-repeat="event in events.eventsList | filter:events.eventsList.search | orderBy:'title'">
-                <img class="large-img event c-p" ng-click='showEvent(event.id)' src="{{event.image}}"></img>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img height="100" width="150" class="event c-p" ng-click='showEvent(event.id)' src="{{event.image}}"></img>
+                    </div>
+                </div>
+                
                 <div class="event-overlay c-p" ng-click='showEvent(event.id)'>
                     <b>Title: </b>{{event.title}}
                     <br>
