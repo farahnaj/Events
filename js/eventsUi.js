@@ -11,4 +11,9 @@ jQuery(function($) {
         console.log("menu-toggle");
         $("#wrapper").toggleClass("toggled");
     });
+
+    $(".sidebar-nav li").click(function(e) 
+    {
+      console.log("farah");
+    });
 });
