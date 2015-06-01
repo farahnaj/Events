@@ -7,98 +7,100 @@
 
     <!-- Lib CSS -->
     <link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
-    
+
     <!-- Lib JS -->
-    <script src="lib/jquery-1.11.2.min.js"></script>    
+    <script src="lib/jquery-1.11.2.min.js"></script>
     <script src="lib/handlebars-v1.3.0.js"></script>
     <script src="lib/ember.js"></script>
-    <script src="lib/ember-data.js"></script> 
-    <script src="lib/bootstrap.min.js"></script> 
+    <script src="lib/ember-data.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
 
     <!-- App CSS -->
     <link rel="stylesheet" type="text/css" href="css/events.css">
 
-    <!-- App JS -->   
+    <!-- App JS -->
     <script src="data/eventsJson.js"></script>
-    <script src="js/eventsEmberApp.js"></script>  
+    <script src="js/eventsEmberApp.js"></script>
     <script src="js/eventsCore.js"></script>
     <script src="js/eventsUi.js"></script>
 </head>
 
 <body>
-<script type="text/x-handlebars">
-   <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Events</a>
-    </div>
+    <script type="text/x-handlebars">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Events</a>
+                </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">     
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>       
-      </form>
-      <ul class="nav navbar-nav navbar-right">        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
-            <li>{{#link-to 'gridview'}}Grid View{{/link-to}}</li>
-            <li>{{#link-to 'listview'}}List View{{/link-to}}</li>
-            <li><a href="#" id="menu-toggle">Toggle Side Menu</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Profile</a></li>
+                                <li>{{#link-to 'gridview'}}Grid View{{/link-to}}</li>
+                                <li>{{#link-to 'listview'}}List View{{/link-to}}</li>
+                                <li><a href="#" id="menu-toggle">Toggle Side Menu</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
 
-  <div class="" id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="active" title="Grid View">{{#link-to 'gridview'}}<span class="glyphicon glyphicon-th v-img" aria-hidden="true"></span>{{/link-to}}</li>
-                <li title="List View">{{#link-to 'listview'}}<span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span>{{/link-to}}</li>
-                <li title="Add Event"><a class="c-p" ng-click="addEvent()"><span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span></a></li>
-                <li title="Profile"><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
-                <li title="Chat"><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
-                <li title="History"><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
-                <li title="Report"><a href=""><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
-                <li title="Setting"><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>
-                <li title="Logout"><a href=""><span class="glyphicon glyphicon-off v-img" aria-hidden="true"></span></a></li>
-            </ul>
+        <div class="" id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="active" title="Grid View">{{#link-to 'gridview'}}<span class="glyphicon glyphicon-th v-img" aria-hidden="true"></span>{{/link-to}}</li>
+                    <li title="List View">{{#link-to 'listview'}}<span class="glyphicon glyphicon-list-alt v-img" aria-hidden="true"></span>{{/link-to}}</li>
+                    <li title="Add Event">{{#link-to 'newevent'}}<span class="glyphicon glyphicon-plus v-img" aria-hidden="true"></span>{{/link-to}}</li>
+                    <li title="Profile"><a href="#"><span class="glyphicon glyphicon-user v-img" aria-hidden="true"></span></a></li>
+                    <li title="Chat"><a href=""><span class="glyphicon glyphicon-comment v-img" aria-hidden="true"></span></a></li>
+                    <li title="History"><a href=""><span class="glyphicon glyphicon-record v-img" aria-hidden="true"></span></a></li>
+                    <li title="Report"><a href=""><span class="glyphicon glyphicon-signal v-img" aria-hidden="true"></span></a></li>
+                    <li title="Setting"><a href=""><span class="glyphicon glyphicon-cog v-img" aria-hidden="true"></span></a></li>
+                    <li title="Logout"><a href=""><span class="glyphicon glyphicon-off v-img" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <div class="content">
+                {{outlet}}
+            </div>
         </div>
-        <!-- /#sidebar-wrapper -->
-        <div class="content">
-          {{outlet}}
-        </div>        
-  </div>
-</script>
+    </script>
 
-   <script type="text/x-handlebars" id="gridview">
+    <script type="text/x-handlebars" id="gridview">
         <div class="row">
-           {{#each model}}
+            {{#each model}} {{#link-to 'event' this}}
             <div class="col-xs-6 col-lg-4 event-body c-p">
                 <div class="panel panel-default event-overlay-parent">
                     <div class="panel-body">
-                        <img height="100" width="150" class="event c-p" {{bind-attr src="image"}}>
+                        <img height="100" width="150" class="event c-p" {{bind-attr src="image" }}>
                     </div>
                 </div>
-                
+
                 <div class="event-overlay c-p">
                     <b>Title: </b>{{title}}
                     <br>
@@ -111,11 +113,11 @@
                     <b>Venue: </b>{{venue}}
                 </div>
             </div>
-            {{/each}}
-        </div>  
-   </script>
+            {{/link-to}} {{/each}}
+        </div>
+    </script>
 
-   <script type="text/x-handlebars" id="listview">
+    <script type="text/x-handlebars" id="listview">
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -129,21 +131,187 @@
                     </tr>
                 </thead>
                 <tbody>
-                   {{#each model}}
-                    <tr class="event c-p" {{bind-attr title="description"}}>
+                    {{#each model}}
+                    <tr class="event" {{bind-attr title="description" }}>
                         <td>{{id}}</td>
-                        <td><img class="small-img" {{bind-attr src="image"}} {{bind-attr title="description"}}></img>
+                        <td>
+                            <img class="small-img" {{bind-attr src="image" }} {{bind-attr title="description" }}></img>
                         </td>
                         <td>{{title}}</td>
                         <td>{{date}}</td>
                         <td>{{time}}</td>
-                        <td>{{venue}}</td>
+                        <td>{{venue}}
+                            <span class="td-actions">{{#link-to 'event' this}}<span class="glyphicon glyphicon glyphicon-eye-open event-action" aria-hidden="true"></span>{{/link-to}}</span>
+                        </td>
                     </tr>
-                   {{/each}} 
+                    {{/each}}
                 </tbody>
             </table>
         </div>
-   </script>
+    </script>
+
+    <script type="text/x-handlebars" id="event">
+        <div class="panel panel-primary event-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{title}}</h3>
+                <div class="event-actions">
+                    <span class="event-action">
+                        {{#link-to 'edit' this}}
+                          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> {{/link-to}}
+                    </span>
+                    <span class="glyphicon glyphicon-trash event-action" aria-hidden="true" data-toggle="modal" data-target="#confirmModal"></span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <img class="large-img" {{bind-attr src="image" }}></img>
+                <br>
+                <b>Description: </b>{{description}}
+                <br>
+                <b>Date: </b>{{date}}
+                <br>
+                <b>Time: </b>{{time}}
+                <br>
+                <b>Venue: </b>{{venue}}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="confirmModalLabel">Confirmation to delete event</h4>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete event?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" {{action 'delete'}}>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="edit">
+        <div class="panel panel-primary event-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                {{#if id}} Edit {{else}} Add {{/if}} : {{title}}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <img class="large-img" {{bind-attr src="image" }}></img>
+                <br>
+                <!-- FORM -->
+                <form class="form-horizontal" name="eventForm" id="eventForm">
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Title*:</label>
+                        <div class="col-sm-10">
+                            {{input type="text" class="form-control" name="title" placeholder="Title" value=title}}
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description*:</label>
+                        <div class="col-sm-10">
+                            {{input type="text" class="form-control" name="description" placeholder="Description" value=description}}
+                        </div>
+                    </div>
+
+                    <!-- Venue -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Venue*:</label>
+                        <div class="col-sm-10">
+                            {{input type="text" class="form-control" name="venue" placeholder="Venue" value=venue}}
+                        </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Date*:</label>
+                        <div class="col-sm-10">
+                            {{input type="date" class="form-control" name="date" value=date}}
+                        </div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Time*:</label>
+                        <div class="col-sm-10">
+                            {{input type="time" class="form-control" name="time" value=time}}
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary" type="submit" {{action 'save'}}>Save</button>
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="newevent">
+        <div class="panel panel-primary event-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                   Add : {{title}}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <img class="large-img" {{bind-attr src="image" }}></img>
+                <br>
+                <!-- FORM -->
+                <form class="form-horizontal" name="eventForm" id="eventForm">
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Title*:</label>
+                        <div class="col-sm-10">
+                            {{input type="text" class="form-control" name="title" placeholder="Title" value=title}}
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description*:</label>
+                        <div class="col-sm-10">
+                            {{input type="text" class="form-control" name="description" placeholder="Description" value=description}}
+                        </div>
+                    </div>
+
+                    <!-- Venue -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Venue*:</label>
+                        <div class="col-sm-10">
+                            {{input type="text" class="form-control" name="venue" placeholder="Venue" value=venue}}
+                        </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Date*:</label>
+                        <div class="col-sm-10">
+                            {{input type="date" class="form-control" name="date" value=date}}
+                        </div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Time*:</label>
+                        <div class="col-sm-10">
+                            {{input type="time" class="form-control" name="time" value=time}}
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary" type="submit" {{action 'save'}}>Save</button>
+                </form>
+            </div>
+        </div>
+    </script>
 </body>
 
 </html>

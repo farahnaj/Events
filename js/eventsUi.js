@@ -12,8 +12,7 @@ jQuery(function($) {
         $("#wrapper").toggleClass("toggled");
     });
 
-    $(".sidebar-nav li").click(function(e) 
-    {
-      console.log("farah");
+    $(".sidebar-nav li").click(function(e) {
+        console.log("farah");
     });
 });
